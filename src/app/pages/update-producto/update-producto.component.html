@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="mb-5">
+        <h1>Editar producto</h1>
+    </div>
+    
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class=" d-flex row ">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre del producto</label>
+                        <input required [(ngModel)]="producto.nombre" name="nombre" type="text" class="form-control" placeholder="botella">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Descripcion</label>
+                        <input required [(ngModel)]="producto.descripcion" name="descripcion" type="text" class="form-control"  placeholder="botella transparente">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Url imagen del producto</label>
+                        <input required [(ngModel)]="producto.imagenUrl" name="imagenUrl" class="form-control" type="text" >
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label class="form-label">Material del producto</label>
+                        <input required [(ngModel)]="producto.material" name="material" type="text" class="form-control"  placeholder="PET">
+                    </div>
+                    <div  class="mb-3">
+                        <label class="form-label">Precio</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input required [(ngModel)]="producto.precio" name="precio" type="number" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="200">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cantidad de unidades</label>
+                        <input required [(ngModel)]="producto.cantidad" name="cantidad" type="number" class="form-control" placeholder="100">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success mb-3" [disabled]="!f.valid" >Actualizar</button>
+        </form>
+</div>

@@ -1,0 +1,26 @@
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Material</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{producto.id}}</td>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.descripcion}}</td>
+          <td>{{producto.material}}</td>
+          <td>{{producto.cantidad}}</td>
+          <td>${{producto.precio}}</td>
+          <td><button routerLink="/update/{{producto.id}}"   class="btn btn-outline-warning"><fa-icon [icon]="FaEdit"></fa-icon>Editar</button></td>
+          <td><button (click)="borrar(producto.id)"  class="btn btn-outline-danger"><fa-icon [icon]="FaTrashAlt"></fa-icon>Eliminar</button></td>
+        </tr>
+      </tbody>
+</table>

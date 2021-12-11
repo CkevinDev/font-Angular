@@ -1,0 +1,92 @@
+
+<div class="container">
+  <main>
+    <div class="Titulo text text-center">
+      <h2>Formulario de pago</h2>
+    </div><br>
+    <hr>
+    <div class="row g-5">
+
+      <div class="col ms-12">
+
+        <!-- <form class="needs-validation" novalidate="">
+
+          <div class="Informacion">
+            <div class="col"><br>
+              <label for="cc-name" class="form-label">Nombre de la tarjeta</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-muted">Nombre completo como se muestra en la tarjeta</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col"><br>
+              <label for="cc-number" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+            </div>
+            
+              <div class="col"> <br>
+
+                <label for="cc-number" class="form-label">Numero de tarjeta</label>
+
+                <div class="vissa">
+                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              
+              <img src="./assets/img/visa2.svg" alt=""> 
+            </div>
+            </div>
+
+          </div>
+
+          <div class="fecha">
+            <div class="col"> <br>
+              <label for="cc-expiration" class="form-label">Fecha de caducidad</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col"> <br>
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+
+          </div>
+          <br> <br> <br>
+          <button [routerLink]="['/confirmacion']" routerLinkActive="router-link-active"  class="btn btn-lg bn" type="submit">Continuar con el pago</button>
+        </form> -->
+        <form novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest" #f="ngForm">
+          <label class="form-label" for="nombre">Ingresar nombre</label>
+          <input id="nombre" class="form-control mb-3" type="text" formControlName="name" placeholder="nombre de la tarjeta">
+          <div class="my-3">
+            <label for="cc-number" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+          </div>
+          <label>Ingresar tarjeta</label>
+          <ngx-stripe-card
+            [options]="cardOptions"
+            [elementsOptions]="elementsOptions"
+          ></ngx-stripe-card>
+          <button [routerLink]="['/confirmacion']" routerLinkActive="router-link-active"  class="btn btn-lg bn mt-5" type="submit">Continuar con el pago</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-muted text-center text-small"><br><br>
+    <p class="mb-1">© 2021</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacidad</a></li>
+      <li class="list-inline-item"><a href="#">Terminos</a></li>
+      <li class="list-inline-item"><a href="#">Soporte</a></li>
+    </ul>
+  </footer>
+</div>

@@ -1,0 +1,15 @@
+.btn{
+    background: #D84727;
+    border: #D84727;
+    color: white;
+}
+
+.btn:hover{
+    background: rgba(216, 71, 39, 0.8);
+    transform: scale(1.1);
+}
+
+.btn:active{
+    background: rgba(216, 71, 39, 0.8);
+    transform: scale(0.9);
+}

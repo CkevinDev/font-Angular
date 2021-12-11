@@ -1,0 +1,16 @@
+.bn{
+    background-color: #D84727;
+    color: #fff;
+}
+.log{
+    width: 30em;
+    background-color: #fff;
+}
+.log2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f1, .f2{
+    background-color: #EFEEEE;
+}

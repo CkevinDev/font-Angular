@@ -1,0 +1,32 @@
+.container{
+    background-color: white;;
+    color:black;
+    margin-top: 100px;
+    height: 813px;
+    margin-bottom: 100px;
+    padding: 50px;
+}
+
+.mb-5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.mb-3{
+    max-width: 500px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+}
+.bn{
+    background-color: #D84727;
+    color: #fff;
+    max-width: 200px;
+}
+.Crearboton{
+    text-align: center;
+}
+.mb-1{
+    text-align: center;
+}

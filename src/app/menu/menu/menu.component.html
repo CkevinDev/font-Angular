@@ -1,0 +1,61 @@
+  <header class="p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <h4>Plastic Anthony's</h4>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto ml-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link negro" [routerLink]="['/']" routerLinkActive="router-link-active" ><fa-icon [icon]="faHome"></fa-icon> Home</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link negro" [routerLink]="['/lista']" routerLinkActive="router-link-active" ><fa-icon [icon]="faList"></fa-icon> productos</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link negro" [routerLink]="['/nosotros']" routerLinkActive="router-link-active" ><fa-icon [icon]="faHandshake"></fa-icon> nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link negro" [routerLink]="['/contactanos']" routerLinkActive="router-link-active" ><fa-icon [icon]="faEnvelope"></fa-icon> contactanos</a>
+              </li>
+              
+              <li class="nav-item" *ngIf="!isLogged">
+                <a class="nav-link negro" [routerLink]="['/login']" routerLinkActive="router-link-active" ><fa-icon [icon]="faUser"></fa-icon> login</a>
+              </li>
+              
+        </ul>
+
+        <div *ngIf="isLogged" class="dropdown text-end">
+          <a href="#" class="d-flex justify-content-center align-items-center  link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="mt-3 negro"><fa-icon [icon]="faUser"></fa-icon>  {{usuario}}</p>
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" >
+            <li class="nav-item">
+              <a class="nav-link negro" [routerLink]="['/equipo']" routerLinkActive="router-link-active" ><fa-icon [icon]="faUsers"></fa-icon> Equipo</a>
+            </li>
+            <li class="nav-item" *ngIf="isAdmin" >
+              <a class="nav-link negro" [routerLink]="['/admin-list']" routerLinkActive="router-link-active" ><fa-icon [icon]="faTable"></fa-icon> productos-admin</a>
+            </li>
+            <li class="nav-item" *ngIf="isAdmin">
+              <a class="nav-link negro" [routerLink]="['/nuevo']" routerLinkActive="router-link-active" ><fa-icon [icon]="faPlus"></fa-icon> Nuevo producto</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()" >
+                <a class="nav-link hand  negro"  ><fa-icon [icon]="faPowerOff"></fa-icon> LogOut</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="dropdown text-end">
+          <a href="#" class="d-flex justify-content-center align-items-center  link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="mt-3 negro"><fa-icon [icon]="faShoppingCart"></fa-icon> carrito </p>
+          </a>
+          <ul class="dropdown-menu largo dropdown-menu-lg-end" aria-labelledby="dropdownUser1" >
+            <li class="nav-item">
+              <app-shopping-cart></app-shopping-cart>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>

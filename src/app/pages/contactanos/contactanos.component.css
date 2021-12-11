@@ -1,0 +1,12 @@
+.con{
+    width: 60em;
+    background-color: #fff;
+}
+.bor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    border-radius: 20px;
+}

@@ -1,0 +1,27 @@
+.im{
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bn{
+    background-color: #D84727;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.log{
+    width: 30em;
+    background-color: #fff;
+}
+.log2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

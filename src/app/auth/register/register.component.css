@@ -1,0 +1,20 @@
+.f1, .f2, .f3, .f4{
+    background-color: #EFEEEE;
+}
+.log{
+    width: 50em;
+    background-color: #fff;
+}
+.log2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bn{
+    background-color: #D84727;
+    color: #fff;
+}
+
+.round{
+    border-radius: 15px;
+}

@@ -1,0 +1,58 @@
+<div class="container">
+
+    <div class="mb-1"> <br><br><br>
+        <h1>Agregar nuevo producto</h1>
+    </div> <br><br><br>
+
+    <form (ngSubmit)="create()" novalidate #f="ngForm">
+
+        <div class=" d-flex row ">
+            <div class="col-sm-6">
+                <div class="mb-3">
+                    <b> <label class="form-floating">Nombre del producto</label> </b>
+                    <input required [(ngModel)]="nombre" name="nombre" required type="text" class="form-control"
+                        placeholder=""><br>
+                </div>
+                <div class="mb-3">
+                    <b> <label class="form-label">Descripcion</label> </b>
+                    <input required [(ngModel)]="descripcion" name="descripcion" type="text" class="form-control"
+                        placeholder=""> <br>
+
+                </div>
+                <div class="mb-3">
+                    <b> <label class="form-label">Url imagen del producto</label> </b>
+                    <input required [(ngModel)]="imagenUrl" name="imagenUrl" class="form-control" type="text"> <br>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="mb-3">
+                    <b> <label class="form-label">Material del producto</label> </b>
+                    <input required [(ngModel)]="material" name="material" type="text" class="form-control"
+                        placeholder="PET"> <br>
+                </div>
+                <div class="mb-3">
+                    <b> <label class="form-label">Precio</label> </b>
+                    <div class="input-group">
+                        <span class="input-group-text">PEN</span>
+                        <input required [(ngModel)]="precio" name="precio" type="number" class="form-control"
+                            aria-label="Amount (to the nearest dollar)" placeholder="200">
+                    </div>
+
+                </div> <br>
+                <div class="mb-3">
+                    <b> <label class="form-label">Cantidad de unidades</label> </b>
+                    <input required [(ngModel)]="cantidad" name="cantidad" type="number" class="form-control"
+                        placeholder="100"> <br>
+                </div>
+            </div>
+        </div>
+
+        <div class="Crearboton">
+            <button class="w-100 btn btn-lg bn" [disabled]="!f.valid">Crear</button>
+        </div>
+
+
+    </form>
+
+
+</div>

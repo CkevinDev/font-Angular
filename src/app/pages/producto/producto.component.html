@@ -1,0 +1,63 @@
+<section class="Pay">
+
+    
+
+
+    <div class="container">
+
+        <div class="btnvolver">
+            <button (click)="volver()" class="button">volver</button>
+        </div>
+
+        <div class="Colums">
+
+            <div class="colum1">
+                <div class="imagen">
+
+                    <img class="ImagenProducto" [src]="order.producto.imagenUrl" alt="...">
+
+                </div>
+            </div>
+
+            <div class="colum2">
+                <h1 class="display">{{order.producto.nombre}}</h1>
+
+                <div class="fs-5 mb-5"> <br>
+                    <span class="text-decoration-line-through">PEN {{order.producto.precio}} c/u</span>
+                </div>
+
+ 
+                <div class="row">
+                    <div class="col-4 padding-0" *ngIf="!isProductSelected(order.producto)">
+                        <input type="number" min="0" class="form-control" 
+                            [(ngModel)]=order.quantity>
+                    </div>
+                    <div class="col-4 padding-0" *ngIf="!isProductSelected(order.producto)">
+                        <button class="btn btn-lg bn " (click)="addToCart(order)"
+                                [disabled]="order.quantity <= 0">Agregar
+                        </button>
+                    </div>
+                    <div class="col-12" *ngIf="isProductSelected(order.producto)">
+                        <button class="btn btn-lg bn btn-block"
+                                (click)="removeFromCart(order)">Quitar de carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Detalle</h3>
+        <hr> <br>
+        <h5>Descripción del producto</h5> <br>
+        <p class="lead">{{order.producto.descripcion}}</p><br>
+        <h5>Acerca de</h5><br>
+        <p>Todos nuestros productos estan hechos a base de los mejores estandares de calidad del mercado PET y de toda
+            la industria del prolipropileno en general.</p>
+        <h5>Ademas</h5><br>
+        <p>Se realizan pedidos de acoderde a las necesidades del cliente, pudiendose modificar los parametros de los
+            embases para lograr grabar su marca en el mercado</p>
+    </div>
+
+
+</section>

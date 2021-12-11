@@ -1,0 +1,36 @@
+#nosotros{
+    margin: 45px 100px 100px 100px;   
+}
+
+.img{
+    padding-left: 80%;
+    padding-bottom: 0;  
+    position: absolute; 
+    left: 90px;
+    bottom: 275px;   
+}
+
+.card-body{
+    padding: 9% 5%;
+}
+
+.card-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#verde{
+    background: #61803B;
+}
+
+#celeste{
+    background: #58C8E0;
+}
+
+#amarillo{
+    background: #c7e70e;
+}
+
+#cont{
+    border-color: black;
+    border-width: 5px;
+}

@@ -1,0 +1,42 @@
+
+  <div class=" m-5">
+    <div *ngIf="isLogged; else loggedOut">
+      <h2>session iniciado</h2>
+    </div>
+    <ng-template #loggedOut>
+    <div class="log2">
+    <div class="log">
+      <div class="container d-flex justify-content-center">
+        
+          
+          <div class="card-body "  >
+            <form #f="ngForm" (ngSubmit)="onLogin()">
+              
+              <h1 class="text-center h3 mb-3 fw-normal">Iniciar Session</h1><br>
+            
+              <div class="form-floating">
+                <label >Ingrese Usuario</label>
+                <input [(ngModel)]="username" name="username" required type="text" class="form-control f1"  placeholder="username"><br>
+                
+              </div>
+              <div class="form-floating">
+                <label >Ingrese Contraseña</label>
+                <input [(ngModel)]="password" name="password" type="password" required class="form-control f2"  placeholder="Password"><br>
+               
+              </div>
+            
+              <button class="w-100 btn btn-lg bn"  type="submit">Ingresar</button>
+              <div class="checkbox mb-3">
+                
+                <br><p>¿No tienes un cuenta? <a [routerLink]="['/register']" routerLinkActive="router-link-active"> Registrate</a></p>
+              </div>
+            </form>
+            <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">
+              Fallo en el login: {{errSMS}}
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+    </ng-template>
+  </div>

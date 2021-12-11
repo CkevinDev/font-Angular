@@ -1,0 +1,14 @@
+.hand{
+    cursor: pointer;
+}
+
+.negro{
+    color: black;
+}
+
+.largo{
+    position: absolute;
+    min-width: 350px;
+    left: 0px;
+    top: 50px;
+}
