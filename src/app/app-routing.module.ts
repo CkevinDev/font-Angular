@@ -27,9 +27,9 @@ const routes: Routes = [
   {path:"nuevo",component:NewProductoComponent,canActivate:[guard],data:{expectedRol:['admin']}},
   {path:"update/:id",component:UpdateProductoComponent,canActivate:[guard],data:{expectedRol:['admin']}},
   {path:"equipo",component:EquipoComponent},
-  {path:"payment",component:PaymentComponent,canActivate:[guard],data:{expectedRol:['admin']}},
+  {path:"payment",component:PaymentComponent,canActivate:[guard],data:{expectedRol:['admin','user']}},
   {path:"contactanos",component:ContactanosComponent},
-  {path:"confirmacion",component:ConfirmacionComponent,canActivate:[guard],data:{expectedRol:['admin']}},
+  {path:"confirmacion",component:ConfirmacionComponent,canActivate:[guard],data:{expectedRol:['admin','user']}},
   {path:"nosotros",component:NosotrosComponent},
   {path:"**",redirectTo:"",pathMatch:'full'},
 ];
